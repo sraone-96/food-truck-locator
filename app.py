@@ -2,7 +2,7 @@ from flask import Flask, request
 from location_handler import get_nearest_data
 import csv
 
-data_file = '../data.csv'
+data_file = './data.csv'
 app = Flask(__name__)
 
 # Global variable to store the data
