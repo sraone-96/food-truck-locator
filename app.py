@@ -24,9 +24,8 @@ load_data()
 
 @app.route('/', methods=['GET'])
 def hello_world():
-    print('Request received')
     # ... your code ...
-    return 'Hello, world!'
+    return 'Hello, world! updated'
 
 @app.route('/nearest', methods=['POST'])
 def post_data():
