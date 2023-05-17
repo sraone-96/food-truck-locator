@@ -2,7 +2,7 @@ from flask import Flask, request
 from location_handler import get_nearest_data
 import csv
 
-data_file = './data.csv'
+data_file = '../data.csv'
 app = Flask(__name__)
 
 # Global variable to store the data
@@ -20,8 +20,13 @@ def load_data():
 
 load_data()
 
+@app.route('/', methods=['GET'])
+def hello_world():
+    print('Request received')
+    # ... your code ...
+    return 'Hello, world!'
 
-@app.route('/', methods=['POST'])
+@app.route('/nearest', methods=['POST'])
 def post_data():
     if request.method == 'POST':
         try:
