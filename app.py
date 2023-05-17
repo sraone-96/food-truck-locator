@@ -1,9 +1,11 @@
 from flask import Flask, request
 from location_handler import get_nearest_data
 import csv
+from flask_cors import CORS
 
 data_file = './data.csv'
 app = Flask(__name__)
+CORS(app)
 
 # Global variable to store the data
 data = {}
