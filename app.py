@@ -34,8 +34,9 @@ def post_data():
             req_data = request.get_json()
             lat_query = (req_data['lat'])
             lon_query = (req_data['lon'])
+            radius    = (req_data['radius'])
             global data
-            return get_nearest_data(data, loc_id_list, lat_query ,lon_query), 200
+            return get_nearest_data(data, loc_id_list, lat_query ,lon_query, radius), 200
         except Exception as e:
             return str(e), 400  # Return an error response
     else:
